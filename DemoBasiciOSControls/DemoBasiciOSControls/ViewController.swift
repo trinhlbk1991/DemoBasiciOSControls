@@ -10,16 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var containerLogin: UIView!
+    @IBOutlet weak var containerSurvey: UIView!
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfPhone: UITextField!
+    
+    
+    @IBAction func onSegmentValueChanged(sender: UISegmentedControl) {
+        let selectedSegment = sender.selectedSegmentIndex
+        switch selectedSegment{
+        case 0:
+            containerLogin.hidden = false
+            containerSurvey.hidden = true
+            break;
+        case 1:
+            containerLogin.hidden = true
+            containerSurvey.hidden = false
+            break;
+        default:
+            //Do nothing
+            break;
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func onBtnLoginClicked(sender: UIButton) {
+        
     }
-
 
 }
 
