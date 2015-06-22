@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -92,15 +92,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter you name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxc-yG-ZEW">
-                                <rect key="frame" x="110" y="13" width="394" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="osq-Bz-KM2">
                                 <rect key="frame" x="110" y="66" width="394" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <action selector="onTextFieldDoneEdit:" destination="pKJ-vP-jgu" eventType="editingDidEnd" id="wFa-JP-oO2"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ute-f9-LsX">
                                 <rect key="frame" x="249" y="128" width="38" height="30"/>
@@ -111,6 +109,14 @@
                                     <action selector="onBtnLoginClicked:" destination="pKJ-vP-jgu" eventType="touchUpInside" id="VJp-Ho-MxS"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter you name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxc-yG-ZEW">
+                                <rect key="frame" x="110" y="13" width="394" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTextFieldDoneEdit:" destination="pKJ-vP-jgu" eventType="editingDidEndOnExit" id="1TV-G8-8li"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -138,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOg-yL-GtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="468"/>
+            <point key="canvasLocation" x="651" y="631"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Bu2-TK-4ZT">
@@ -160,6 +166,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSd-iE-zeu">
                                 <rect key="frame" x="455" y="16" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSwitchSurveyValueChanged:" destination="io5-HK-sZO" eventType="valueChanged" id="u3s-08-Xwv"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many percent of your salary that you used to pay for house?" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-10-iKK">
                                 <rect key="frame" x="32" y="69" width="472" height="41"/>
@@ -173,8 +182,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="flv-Ev-5Dc">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="flv-Ev-5Dc">
                                 <rect key="frame" x="30" y="126" width="476" height="31"/>
+                                <connections>
+                                    <action selector="onSliderValueChanged:" destination="io5-HK-sZO" eventType="valueChanged" id="tGc-pl-dkk"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,6 +206,10 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="lbSliderValue" destination="s5s-Lj-WjC" id="xxS-sB-tsb"/>
+                        <outlet property="sliderSurvey" destination="flv-Ev-5Dc" id="kaC-90-DGM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCK-Ts-o2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
