@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -100,6 +100,14 @@
                                     <action selector="onTextFieldDoneEdit:" destination="pKJ-vP-jgu" eventType="editingDidEnd" id="wFa-JP-oO2"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter you name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxc-yG-ZEW">
+                                <rect key="frame" x="110" y="13" width="394" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTextFieldDoneEdit:" destination="pKJ-vP-jgu" eventType="editingDidEndOnExit" id="1TV-G8-8li"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ute-f9-LsX">
                                 <rect key="frame" x="249" y="128" width="38" height="30"/>
                                 <state key="normal" title="Login">
@@ -109,21 +117,21 @@
                                     <action selector="onBtnLoginClicked:" destination="pKJ-vP-jgu" eventType="touchUpInside" id="VJp-Ho-MxS"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter you name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxc-yG-ZEW">
-                                <rect key="frame" x="110" y="13" width="394" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="onTextFieldDoneEdit:" destination="pKJ-vP-jgu" eventType="editingDidEndOnExit" id="1TV-G8-8li"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hxc-yG-ZEW" firstAttribute="leading" secondItem="osq-Bz-KM2" secondAttribute="leading" id="4MV-r4-ouZ"/>
+                            <constraint firstItem="ute-f9-LsX" firstAttribute="leading" secondItem="hxc-yG-ZEW" secondAttribute="trailing" constant="-38" id="4U7-ZC-13s">
+                                <variation key="heightClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="53D-2J-m2r" firstAttribute="leading" secondItem="NKo-8s-duN" secondAttribute="leadingMargin" constant="16" id="5O2-98-a3L"/>
                             <constraint firstItem="53D-2J-m2r" firstAttribute="baseline" secondItem="hxc-yG-ZEW" secondAttribute="baseline" id="Awi-Z9-3M0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ute-f9-LsX" secondAttribute="trailing" constant="16" id="C8L-PP-EUu">
+                                <variation key="heightClass=compact" constant="32"/>
+                            </constraint>
+                            <constraint firstItem="hxc-yG-ZEW" firstAttribute="top" secondItem="ute-f9-LsX" secondAttribute="top" id="JC0-CZ-mua"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hxc-yG-ZEW" secondAttribute="trailing" constant="16" id="RNW-mi-fYv"/>
+                            <constraint firstItem="osq-Bz-KM2" firstAttribute="bottom" secondItem="ute-f9-LsX" secondAttribute="bottom" id="TrZ-zF-veI"/>
                             <constraint firstItem="osq-Bz-KM2" firstAttribute="baseline" secondItem="UTB-8b-xmu" secondAttribute="baseline" id="Z29-4E-8OU"/>
                             <constraint firstAttribute="centerX" secondItem="ute-f9-LsX" secondAttribute="centerX" id="dvC-gq-7xM"/>
                             <constraint firstItem="53D-2J-m2r" firstAttribute="top" secondItem="cdz-T0-C2L" secondAttribute="bottom" constant="16" id="fgF-ro-GRF"/>
@@ -134,7 +142,32 @@
                             <constraint firstAttribute="trailingMargin" secondItem="osq-Bz-KM2" secondAttribute="trailing" constant="16" id="tyN-dR-Xmg"/>
                             <constraint firstItem="ute-f9-LsX" firstAttribute="top" secondItem="osq-Bz-KM2" secondAttribute="bottom" constant="32" id="w8K-1p-2wW"/>
                             <constraint firstItem="UTB-8b-xmu" firstAttribute="top" secondItem="53D-2J-m2r" secondAttribute="bottom" constant="32" id="zV3-0j-eD5"/>
+                            <constraint firstItem="ute-f9-LsX" firstAttribute="leading" secondItem="osq-Bz-KM2" secondAttribute="trailing" constant="-38" id="zfG-LQ-gke">
+                                <variation key="heightClass=compact" constant="16"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JC0-CZ-mua"/>
+                                <exclude reference="TrZ-zF-veI"/>
+                                <exclude reference="4U7-ZC-13s"/>
+                                <exclude reference="C8L-PP-EUu"/>
+                                <exclude reference="zfG-LQ-gke"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="JC0-CZ-mua"/>
+                                <exclude reference="RNW-mi-fYv"/>
+                                <include reference="TrZ-zF-veI"/>
+                                <exclude reference="tyN-dR-Xmg"/>
+                                <include reference="4U7-ZC-13s"/>
+                                <include reference="C8L-PP-EUu"/>
+                                <exclude reference="dvC-gq-7xM"/>
+                                <exclude reference="w8K-1p-2wW"/>
+                                <include reference="zfG-LQ-gke"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <connections>
@@ -158,12 +191,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="536" height="406"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will you answer this survey?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ9-x8-LLb">
-                                <rect key="frame" x="32" y="16" width="217" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSd-iE-zeu">
                                 <rect key="frame" x="455" y="16" width="51" height="31"/>
                                 <connections>
@@ -175,6 +202,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5s-Lj-WjC">
                                 <rect key="frame" x="258" y="172" width="20" height="21"/>
@@ -188,6 +218,15 @@
                                     <action selector="onSliderValueChanged:" destination="io5-HK-sZO" eventType="valueChanged" id="tGc-pl-dkk"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will you answer this survey?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ9-x8-LLb">
+                                <rect key="frame" x="32" y="16" width="217" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
